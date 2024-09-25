@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Website Gallery</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: gray;
+}
+header {
+  background: #130606;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+nav {
+  background: #e15757;
+  width: 100%;
+  overflow: auto;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+li {
+  float: left;
+}
+nav a {
+  width: 120px;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  background: #dd4c4c;
+  font-size: 17px;
+  color: white;
+  padding: 20px 10px;
+  font-family: Arial;
+}
+nav a:hover {
+  background: skyblue;
+  color: black;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  background: #f2f2f2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Creates four equal columns */
+  gap: 20px; /* Space between gallery items */
+  padding: 10px;
+}
+.gallery {
+  border: 1px solid #ccc;
+}
+.gallery img {
+  width: 100%;
+  height: 150px; /* Uniform height for all images */
+  object-fit: cover;
+}
+.desc {
+  padding: 10px;
+  text-align: center;
+}
+.login-form {
+  max-width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: none; /* Hidden by default */
+}
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.login-form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background: #e24d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.login-form input[type="submit"]:hover {
+  background: skyblue;
+  color: black;
+}
+</style>
+</head>
+<body>
+
+<!-- Logo Section -->
+<header>
+  Welcome to Gallery Glimpse
+</header>
+
+<!-- Navigation Menu -->
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Explore</a></li>
+    <li><a href="#">Downloads</a></li>
+    <li><a href="#">Create</a></li>
+    <li><a href="#" onclick="toggleLoginForm()">Login</a></li> <!-- Link to toggle the login form -->
+  </ul>
+</nav>
+
+<!-- Gallery Section -->
+<div class="container">
+  <div class="gallery">
+    <img src="https://i.pinimg.com/736x/f2/57/1e/f2571e25053098d98c37173fcd9380a4.jpg" alt="Urban Echoes">
+    <div class="desc">URBAN ECHOS</div>
+  </div>
+  <div class="gallery">
+    <img src="https://i.pinimg.com/564x/6a/99/ee/6a99ee843798375c5f7049316e8d31ed.jpg" alt="Paris Aesthetic">
+    <div class="desc">PARIS AESTHETIC</div>
+  </div>
+  <div class="gallery">
+    <img src="https://i.pinimg.com/736x/78/c9/ce/78c9ce154bd25c6cb4c300b8fca768a4.jpg" alt="Flower Aesthetic">
+    <div class="desc">FLOWER AESTHETIC</div>
+  </div>
+  <div class="gallery">
+    <img src="https://i.pinimg.com/736x/3f/c2/ff/3fc2ff523dc7b20b22308704531d974a.jpg" alt="Nature">
+    <div class="desc">NATURE</div>
+  </div>
+  <div class="gallery">
+    <img src="https://i.pinimg.com/564x/ad/6e/84/ad6e84cbbb6d9c3f1609f389da6defff.jpg" alt="Faces of Life">
+    <div class="desc">FACES OF LIFE</div>
+  </div>
+  <div class="gallery">
+    <img src="https://i.pinimg.com/736x/8b/76/47/8b7647826e3b9b599fd71f90398cf54e.jpg" alt="Universe">
+    <div class="desc">UNIVERSE</div>
+  </div>
+  <div class="gallery">
+    <img src="https://i.pinimg.com/564x/ea/f6/48/eaf648f57a06730648f1fd9a148f538e.jpg" alt="Fashion">
+    <div class="desc">FASHION</div>
+  </div>
+  <div class="gallery">
+    <img src="https://i.pinimg.com/564x/2c/16/8d/2c168d5f41ecb09e783d0c78481f6ed2.jpg" alt="INTO THE WILD">
+    <div class="desc">INTO THE WILD</div>
+  </div>
+</div>
+
+<!-- Login Section -->
+<div id="login" class="login-form">
+  <h2>Login</h2>
+  <form action="#" method="post">
+    <input type="text" placeholder="Username" name="username" required>
+    <input type="password" placeholder="Password" name="password" required>
+    <input type="submit" value="Login">
+  </form>
+</div>
+
+<!-- JavaScript to Toggle Login Form -->
+<script>
+function toggleLoginForm() {
+  var loginForm = document.getElementById('login');
+  if (loginForm.style.display === 'none' || loginForm.style.display === '') {
+    loginForm.style.display = 'block'; 
+  } else {
+    loginForm.style.display = 'none'; 
+  }
+}
+</script>
+
+</body>
+</html>
